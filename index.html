@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <title>Product-Preview</title>
+    <style>
+        body{
+            background-image: url("bg.png");
+            background-size: cover;
+            font-weight: 800;
+            margin:0;
+            padding:0;
+            
+        }
+        .cont{
+            display:flex;
+        }
+        .heading{
+            text-align: center;
+            font-family: "Tangerine", cursive;
+            font-size: 80px;
+            margin: 20px 10px;
+        }
+        .Main-container{
+            display:flex;
+            width:60%;
+            flex-wrap: wrap;
+            margin-left: 80px;
+        }
+        .Sub-container{
+            display:block;
+            border:3px solid black;
+            margin: 5px 10px;
+            border-radius: 5px;
+        }
+        .sub-container-text{
+            text-align: center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 15px;
+        }
+        .chocolate-image{
+            width:190px;
+            margin: 10px 10px;
+            object-fit: cover;
+        }
+        .chocolate-image-2{
+            width:190px;
+            margin: 10px 10px;
+            object-fit: cover;
+            height: 170px;
+        }
+        .enlarged-chocolate-image{
+            width:280px;
+            margin: 15px 35px;
+            object-fit: cover;
+        }
+        .rating-img{
+            width: 150px;
+            margin-left: 90px;
+        }
+        .sub-container-text-updated{
+            text-align: center;
+            font-family: "Tangerine", cursive;
+            font-size: 40px;
+            margin-top: 3px;
+            margin-bottom: 5px;
+        }
+        .sub-container-text-updated-1{
+            text-align: center;
+            font-family: "Tangerine", cursive;
+            font-size: 25px;
+            margin-top: 3px;
+            margin-bottom: 5px;
+        }
+        .sub-container-text-2{
+            font-size: 25px;
+            text-align: center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 15px auto;
+        }
+        .btn-container{
+            display:flex;
+            justify-content: space-evenly;
+        }
+        .Buy-Now-btn{
+            padding:5px 25px;
+            border:1px solid black;
+            margin:10px 5px;
+            font-size: 15px;
+            
+        }
+        .Atc-btn{
+            padding:5px 25px;
+            background-color: black;
+            color:white;
+            margin: 10px 5px;
+            border:none;
+            font-size: 15px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 class="heading">Choco-Delight</h1>
+<div class="cont">
+    <div class="Main-container">
+        <div class="Sub-container" onclick="cardToggler('ferrero-rosher')" >
+            <img src="ferero-rosher.jpg" class="chocolate-image">
+            <p class="sub-container-text">Ferrero Rocher </p>
+            <p class="sub-container-text">₹739/-</p>
+        </div>
+
+        <div class="Sub-container" onclick="cardToggler('cadbury-celeb')">
+            <img src="cadbury-celebration.png" class="chocolate-image" >
+            <p class="sub-container-text">Cadbury-Celebration </p>
+            <p class="sub-container-text">₹533/-</p>
+        </div>
+
+        <div class="Sub-container" onclick="cardToggler('fr-moments')">
+            <img src="fr-moments.png" class="chocolate-image" >
+            <p class="sub-container-text">Ferrero Rocher-Moments</p>
+            <p class="sub-container-text">₹265/-</p>
+        </div>
+
+        <div class="Sub-container" onclick="cardToggler('kisses')">
+            <img src="hersheys-kisses.png" class="chocolate-image-2" >
+            <p class="sub-container-text">Hershays Kisses </p>
+            <p class="sub-container-text">₹343/-</p>
+        </div>
+
+        <div class="Sub-container" onclick="cardToggler('winni-choco')">
+            <img src="winni-chocolate.png" class="chocolate-image-2" >
+            <p class="sub-container-text">WINNI-24 Pcs </p>
+            <p class="sub-container-text">₹1,245/-</p>
+        </div>
+
+        <div class="Sub-container" onclick="cardToggler('chokola')">
+            <img src="chokola-regalia.png" class="chocolate-image-2" >
+            <p class="sub-container-text">Chokola Regalia</p>
+            <p class="sub-container-text">₹1,567/-</p>
+        </div>
+    </div>
+
+    <div>
+        <div class="Sub-container">
+            <img src="ferero-rosher.jpg" class="enlarged-chocolate-image" id="image">
+            <p class="sub-container-text-updated" id="text">Ferrero Rocher </p>
+            <img src="rating-4.5.png" class="rating-img" id="rating"/>
+            <p class="sub-container-text-updated-1" id="detailed-text">Ferrero Rocher Premium Chocolate <br/>24 Pieces,300 Gram</p>
+            <p class="sub-container-text-2" id="price">₹739/-</p>
+            <div class="btn-container">
+                <button class="Buy-Now-btn">Buy Now</button>
+                <button class="Atc-btn">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function cardToggler(chocolate){
+    const imageElement=document.getElementById("image");
+    const textElement=document.getElementById("text");
+    const ratingElement=document.getElementById("rating");
+    const detailedTextElement=document.getElementById("detailed-text");
+    const priceElement=document.getElementById("price");
+
+    if(chocolate=="ferrero-rosher"){
+        imageElement.src="ferero-rosher.jpg";
+        textElement.innerText="Ferrero Rocher";
+        ratingElement.src="rating-4.5.png";
+        detailedTextElement.innerText=<p>Ferrero Rocher Premium Chocolate <br/>24 Pieces,300 Gram</p>;
+        priceElement.innerText=<p>₹739/-</p>;
+    }
+
+    else if(chocolate=="cadbury-celeb"){
+        imageElement.src="cadbury-celebration.png";
+        textElement.innerText="Cadbury Celebration";
+        ratingElement.src="4-rating.png";
+        detailedTextElement.innerText=<p>Cadbury Celebration Assorted Chocolate <br/>Gift-Packed Bars</p>;
+        priceElement.innerText=<p>₹533/-</p>;
+    }
+
+    else if(chocolate=="fr-moments"){
+        imageElement.src="fr-moments.png";
+        textElement.innerText="Ferrero-rosher Moments";
+        ratingElement.src="4-rating.png";
+        detailedTextElement.innerText=<p>Ferrero Rocher Moments, Hazenut flavor,<br/> 16 pralines Pcs 92.8gm</p>;
+        priceElement.innerText=<p>₹265/-</p>;
+    }
+
+    else if(chocolate=="kisses"){
+        imageElement.src="hersheys-kisses.png";
+        textElement.innerText="Hersheys Kisses";
+        ratingElement.src="5-rating.png";
+        detailedTextElement.innerText=<p>Hersheys Kisses Hazelnuts N Cookies</p>;
+        priceElement.innerText=<p>₹343/-</p>;
+    }
+
+    else if(chocolate=="winni-choco"){
+        imageElement.src="winni-chocolate.png";
+        textElement.innerText="Winni Chocolate";
+        ratingElement.src="4-rating.png";
+        detailedTextElement.innerText=<p>WINNI CELEBRATE RELATIONS Chocolate 24 Pcs Gift Pack</p>;
+        priceElement.innerText=<p>₹1,245/-</p>;
+    }
+
+    else if(chocolate=="chokola"){
+        imageElement.src="chokola-regalia.png";
+        textElement.innerText="Chokola Regalia";
+        ratingElement.src="rating-4.5.png";
+        detailedTextElement.innerText=<p>Regalia Chocolates Gift Pack,<br/>Regalia gift box with a burst of flavours</p>;
+        priceElement.innerText=<p>₹1,245/-</p>;
+    }
+    }
+</script>
+</body>
+</html>
