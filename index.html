@@ -21,7 +21,7 @@
         }
         .heading{
             text-align: center;
-            font-family: "Tangerine", cursive;
+            font-family: "Tangerine",cursive;
             font-size: 80px;
             margin: 20px 10px;
         }
@@ -36,6 +36,9 @@
             border:3px solid black;
             margin: 5px 10px;
             border-radius: 5px;
+        }
+        .sub-container2{
+            height: 570px;
         }
         .sub-container-text{
             text-align: center;
@@ -56,7 +59,9 @@
         .enlarged-chocolate-image{
             width:280px;
             margin: 15px 35px;
+            margin-bottom: 5px;
             object-fit: cover;
+            width: 250px;
         }
         .rating-img{
             width: 150px;
@@ -105,7 +110,7 @@
     </style>
 </head>
 <body>
-    <h1 class="heading">Choco-Delight</h1>
+    <h1 class="heading">Choco-Delights</h1>
 <div class="cont">
     <div class="Main-container">
         <div class="Sub-container" onclick="cardToggler('ferrero-rosher')" >
@@ -141,12 +146,12 @@
         <div class="Sub-container" onclick="cardToggler('chokola')">
             <img src="chokola-regalia.png" class="chocolate-image-2" >
             <p class="sub-container-text">Chokola Regalia</p>
-            <p class="sub-container-text">₹1,567/-</p>
+            <p class="sub-container-text">₹1,567/-</p> 
         </div>
     </div>
 
     <div>
-        <div class="Sub-container">
+        <div class="Sub-container sub-container2">
             <img src="ferero-rosher.jpg" class="enlarged-chocolate-image" id="image">
             <p class="sub-container-text-updated" id="text">Ferrero Rocher </p>
             <img src="rating-4.5.png" class="rating-img" id="rating"/>
@@ -160,62 +165,70 @@
     </div>
 </div>
 
-<script>
-    function cardToggler(chocolate){
-    const imageElement=document.getElementById("image");
-    const textElement=document.getElementById("text");
-    const ratingElement=document.getElementById("rating");
-    const detailedTextElement=document.getElementById("detailed-text");
-    const priceElement=document.getElementById("price");
+ <script>
+    function cardToggler(chocolate)
+    {
+    const imageElement = document.getElementById("image");
+    const textElement = document.getElementById("text");
+    const ratingElement = document.getElementById("rating");
+    const detailedTextElement = document.getElementById("detailed-text");
+    const priceElement = document.getElementById("price");
 
-    if(chocolate=="ferrero-rosher"){
-        imageElement.src="ferero-rosher.jpg";
-        textElement.innerText="Ferrero Rocher";
-        ratingElement.src="rating-4.5.png";
-        detailedTextElement.innerText=<p>Ferrero Rocher Premium Chocolate <br/>24 Pieces,300 Gram</p>;
-        priceElement.innerText=<p>₹739/-</p>;
-    }
-
-    else if(chocolate=="cadbury-celeb"){
-        imageElement.src="cadbury-celebration.png";
-        textElement.innerText="Cadbury Celebration";
-        ratingElement.src="4-rating.png";
-        detailedTextElement.innerText=<p>Cadbury Celebration Assorted Chocolate <br/>Gift-Packed Bars</p>;
-        priceElement.innerText=<p>₹533/-</p>;
+    if(chocolate === "ferrero-rosher"){
+        imageElement.src = "ferero-rosher.jpg";
+        textElement.innerText = "Ferrero Rocher";
+        ratingElement.src = "rating-4.5.png";
+        detailedTextElement.innerText = "Ferrero Rocher Premium Chocolate \n 24 Pieces,300 Gram";
+        priceElement.innerText = "₹739/-"
     }
 
-    else if(chocolate=="fr-moments"){
-        imageElement.src="fr-moments.png";
-        textElement.innerText="Ferrero-rosher Moments";
-        ratingElement.src="4-rating.png";
-        detailedTextElement.innerText=<p>Ferrero Rocher Moments, Hazenut flavor,<br/> 16 pralines Pcs 92.8gm</p>;
-        priceElement.innerText=<p>₹265/-</p>;
+    else if(chocolate === "cadbury-celeb"){
+        imageElement.src = "cadbury-celebration.png";
+        textElement.innerText = "Cadbury Celebration";
+        ratingElement.src = "4-rating.png";
+        detailedTextElement.innerText = "Cadbury Celebration Assorted Chocolate \n Gift-Packed Bars";
+        priceElement.innerText = "₹533/-";
     }
 
-    else if(chocolate=="kisses"){
-        imageElement.src="hersheys-kisses.png";
-        textElement.innerText="Hersheys Kisses";
-        ratingElement.src="5-rating.png";
-        detailedTextElement.innerText=<p>Hersheys Kisses Hazelnuts N Cookies</p>;
-        priceElement.innerText=<p>₹343/-</p>;
-    }
 
-    else if(chocolate=="winni-choco"){
-        imageElement.src="winni-chocolate.png";
-        textElement.innerText="Winni Chocolate";
-        ratingElement.src="4-rating.png";
-        detailedTextElement.innerText=<p>WINNI CELEBRATE RELATIONS Chocolate 24 Pcs Gift Pack</p>;
-        priceElement.innerText=<p>₹1,245/-</p>;
-    }
 
-    else if(chocolate=="chokola"){
-        imageElement.src="chokola-regalia.png";
-        textElement.innerText="Chokola Regalia";
-        ratingElement.src="rating-4.5.png";
-        detailedTextElement.innerText=<p>Regalia Chocolates Gift Pack,<br/>Regalia gift box with a burst of flavours</p>;
-        priceElement.innerText=<p>₹1,245/-</p>;
+      else if(chocolate === "fr-moments"){
+        imageElement.src = "fr-moments.png";
+        textElement.innerText = "Ferrero-rosher Moments";
+        ratingElement.src = "4-rating.png";
+        detailedTextElement.innerText = "Ferrero Rocher Moments, Hazenut flavor,\n 16 pralines Pcs 92.8gm";
+        priceElement.innerText="₹265/-";
+     }
+
+     else if(chocolate === "kisses"){
+       imageElement.src = "hersheys-kisses.png";
+        textElement.innerText = "Hersheys Kisses";
+        ratingElement.src = "rating-4.5.png";
+        detailedTextElement.innerText = "Hersheys Kisses Hazelnuts N Cookies,\n Full of Chocolate";
+        priceElement.innerText = "₹343/-";
+     }
+
+     else if(chocolate === "winni-choco"){
+         imageElement.src = "winni-chocolate.png";
+         textElement.innerText = "Winni Chocolate";
+         ratingElement.src = "4-rating.png";
+         detailedTextElement.innerText = "WINNI Celebrate relations Chocolate \n 24 Pcs Gift Pack";
+         priceElement.innerText = "₹1,245/-";
+     }
+
+     else if(chocolate === "chokola"){
+         imageElement.src = "chokola-regalia.png";
+        textElement.innerText = "Chokola Regalia";
+        ratingElement.src = "rating-4.5.png";
+        detailedTextElement.innerText = "Regalia Chocolates Gift Pack,\n Regalia gift box with a burst of flavours";
+        priceElement.innerText = "₹1,245/-";
     }
-    }
-</script>
+}
+    
+    
+</script> 
+
+
 </body>
+
 </html>
